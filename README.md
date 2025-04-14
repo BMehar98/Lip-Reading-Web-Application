@@ -23,14 +23,6 @@ FFmpeg (for video processing)
 Steps
 Clone the repository
 
-sh
-Copy
-git clone https://github.com/yourusername/LipNet-Lip-to-Text.git
-cd LipNet-Lip-to-Text
-Install dependencies
-
-sh
-Copy
 pip install -r requirements.txt
 Download pre-trained weights (if applicable)
 
@@ -40,23 +32,18 @@ Place the model weights (lipnet_model_weights.h5) in the models/ folder.
 
 Run the Streamlit app
 
-sh
-Copy
 streamlit run app/streamlitapp.py
 🖥️ Usage
 Running the Web App
 Start the Streamlit server:
 
-sh
-Copy
 streamlit run app/streamlitapp.py
 Open http://localhost:8501 in your browser.
 
 Upload a video file or use a webcam to test the model.
 
 Command Line Inference
-sh
-Copy
+
 python predict.py --video_path "data/sample.mp4"
 🏋️ Training (Optional)
 If you want to train the model from scratch:
@@ -65,16 +52,14 @@ Download the dataset (e.g., GRID Corpus).
 
 Preprocess the videos and alignments:
 
-sh
-Copy
+
 python preprocess.py --data_dir "data/"
 Train the model:
 
-sh
-Copy
+
 python train.py --epochs 50 --batch_size 32
 📁 Project Structure
-Copy
+
 LipNet-Lip-to-Text/
 ├── app/                  # Streamlit web app
 │   └── streamlitapp.py
@@ -93,10 +78,8 @@ Issue	Solution
 FileNotFoundError: ..\data\s1	Ensure the data/ folder exists and contains the dataset.
 ModuleNotFoundError	Run pip install -r requirements.txt to install missing packages.
 CUDA errors (GPU issues)	Install correct tensorflow-gpu version or run on CPU.
-📜 License
-This project is licensed under MIT License. See LICENSE for details.
 
-🙏 Credits
+
 Original LipNet paper: Assael et al. (2016)
 
 Streamlit for the web interface.
